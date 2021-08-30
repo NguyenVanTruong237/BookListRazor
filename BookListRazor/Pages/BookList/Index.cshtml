@@ -1,0 +1,62 @@
+﻿@page
+@model BookListRazor.Pages.BookList.IndexModel
+    
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Book list</h2>
+    </div>
+    <div class="col-3">
+        <a asp-page="Create" class="btn btn-info text-white">Thêm sách mới</a>
+    </div>
+</div>
+
+
+
+<div class="col-12 border p-3 mt-3">
+    <form method="post">
+        @if (Model.Books.Count() > 0)
+        {
+            <table class="table table-bordered">
+                <tr class="table-info">
+                    <th>
+                        <label>Tên sách</label>
+                    </th>
+                    <th>
+                        <label>Tác giả</label>
+                    </th>
+                    <th>
+                        <label>ISBN</label>
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                @foreach (var item in Model.Books)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.ISBN)
+                </td>
+                <td>
+                    <button class="btn btn-success btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+
+                </td>
+            </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>Không có sẵn sách, hãy thêm.</p>
+        }
+    </form>
+</div>
