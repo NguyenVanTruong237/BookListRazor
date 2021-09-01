@@ -18,7 +18,6 @@ namespace BookListRazor.Pages.BookList
         [BindProperty]
         public Book Book { get; set; }
 
-
         public void OnGet()
         {
         }

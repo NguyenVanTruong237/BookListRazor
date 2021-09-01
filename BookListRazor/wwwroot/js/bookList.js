@@ -20,7 +20,7 @@ function loadDataTable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                        <a href="/booklist/edit?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
+                        <a href="/booklist/upsert?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
                             edit
                         </a>
                         &nbsp;
@@ -50,8 +50,8 @@ function Delete(url) {
                     url: url,
                     type: "DELETE",
                     success: function (data) {
-                        if (data.success) {
-                            toastr.success(data.message);
+                        if (data.success) {         //data trong success gồm true và false, nếu true trả về message, fales tương tư.
+                            toastr.success(data.message);   
                             dataTable.ajax.reload();
                         }
                         else {
