@@ -1,2 +1,4 @@
 # BookListRazor
-ASP.NET Core
+- ASP.NET Core
+- SQL Sever Management Studio
+- RazorPages
